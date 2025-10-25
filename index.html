@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renegade Immortal - Fansite</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="parallax">
+        <div class="overlay">
+            <h1>Renegade Immortal</h1>
+            <p>Fansite Donghua Keren</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">Tentang</a>
+        <a href="#characters">Karakter</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <section id="about" class="fade-in">
+        <h2>Tentang Renegade Immortal</h2>
+        <p>Renegade Immortal menceritakan perjalanan Wang Lin dalam mengejar keabadian di dunia cultivator yang keras. Situs ini dibuat untuk fans yang ingin lebih dekat dengan dunia ini.</p>
+    </section>
+
+    <section id="characters" class="fade-in">
+        <h2>Karakter Utama</h2>
+        <div class="character-list">
+            <div class="char-card">Wang Lin</div>
+            <div class="char-card">Chen Yufei</div>
+            <div class="char-card">Lan Yu</div>
+            <div class="char-card">...</div>
+        </div>
+    </section>
+
+    <section id="gallery" class="fade-in">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="images/banner.jpg" alt="Scene 1">
+            <img src="images/banner.jpg" alt="Scene 2">
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Kontak</h2>
+        <p>Email: <a href="mailto:fanrenegade@gmail.com">fanrenegade@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Renegade Immortal Fansite</p>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
